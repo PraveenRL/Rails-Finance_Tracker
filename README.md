@@ -1,24 +1,19 @@
-# README
+* -> cmd
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Finance Tracker app
 
-Things you may want to cover:
+## Athentication System ---------------------
 
-* Ruby version
+1. Add | gem 'devise' | in Gemfile
+2. rails generate devise:install *
 
-* System dependencies
+# Create User with devise:
 
-* Configuration
+> rails generate devise User *  
+> paste | before_action :authenticate_user! | inside application_controller.rb
+> paste 
+  <p class="notice"> <%= notice %> </p>
+  <p class="alert"> <%= alert %> </p>
+  inside body of application.html.erb
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<!-- Now the signup and login page functionality automatically created -->
