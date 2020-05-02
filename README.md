@@ -18,7 +18,7 @@ $ -> cmd
 
 <!-- Now the signup and login page functionality automatically created -->
 # Add bootstrap 4
-> yarn add bootstrap@4.4.1 jquery@3.4.1 popper.js   $
+> yarn add bootstrap@4.4.1 jquery@3.4.1 popper.js   $  
 > Make the config/webpack/environment.js file as follows:
 
 const { environment } = require('@rails/webpacker')
@@ -32,7 +32,7 @@ environment.plugins.append("Provide", new webpack.ProvidePlugin({
 
 module.exports = environment
 
-> Add | import 'bootstrap' | inside app\javascript\packs\application.js
+> Add | import 'bootstrap' | inside app\javascript\packs\application.js  
 > Go to app/assets/stylesheets/application.css and add the following line above the require_tree 
 
 *= require bootstrap
@@ -42,5 +42,5 @@ So it looks like below:
 *= require_tree .
 *= require_self
 
-> Create a file as custum_style.scss inside app\assets\stylesheets\ and paste this to modify class 
+> Create a file as custum_style.scss inside app\assets\stylesheets\ and paste this to modify class  
 @import 'bootstrap/dist/css/bootstrap';
