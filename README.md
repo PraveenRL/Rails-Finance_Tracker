@@ -49,3 +49,14 @@ So it looks like below:
 1. Add `gem 'devise-bootstrap-views', '~> 1.0' ` inside Gemfile and bundle install
 2. For Generate views `rails generate devise:views:bootstrap_templates`
 
+# Get API (Stock)
+1. Create free acount in IEX cloud
+1. Turn on **SANDBOX TESTING**
+3. Go to API Tokens and copy PUBLISHABLE
+
+```
+client = IEX::Api::Client.new(
+  publishable_token: 'publishable_token',
+  endpoint: 'https://sandbox.iexapis.com/v1'
+)
+```
