@@ -1,15 +1,15 @@
-* -> cmd
+$ -> cmd
 
 # Finance Tracker app
 
 ## Athentication System ---------------------
 
 1. Add | gem 'devise' | in Gemfile
-2. rails generate devise:install *
+2. rails generate devise:install $
 
 # Create User with devise:
 
-> rails generate devise User *  
+> rails generate devise User $  
 > paste | before_action :authenticate_user! | inside application_controller.rb
 > paste 
   <p class="notice"> <%= notice %> </p>
@@ -18,7 +18,7 @@
 
 <!-- Now the signup and login page functionality automatically created -->
 # Add bootstrap 4
-> yarn add bootstrap@4.4.1 jquery@3.4.1 popper.js
+> yarn add bootstrap@4.4.1 jquery@3.4.1 popper.js   $
 > Make the config/webpack/environment.js file as follows:
 
 const { environment } = require('@rails/webpacker')
