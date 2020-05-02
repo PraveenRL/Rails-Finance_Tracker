@@ -7,7 +7,7 @@
 
 # Create User with devise:
 
-  `rails generate devise User` 
+> `rails generate devise User`  
   paste | before_action :authenticate_user! | inside application_controller.rb
   paste 
   <p class="notice"> <%= notice %> </p>
@@ -30,8 +30,8 @@
 > 
 > module.exports = environment
 
-> Add | import 'bootstrap' | inside app\javascript\packs\application.js  
-> Go to app/assets/stylesheets/application.css and add the following line above the require_tree 
+## Add | import 'bootstrap' | inside app\javascript\packs\application.js  
+Go to app/assets/stylesheets/application.css and add the following line above the require_tree 
 
 > *= require bootstrap
 
@@ -48,3 +48,4 @@ So it looks like below:
 
 1. Add `gem 'devise-bootstrap-views', '~> 1.0' ` inside Gemfile and bundle install
 2. For Generate views `rails generate devise:views:bootstrap_templates`
+
