@@ -44,3 +44,9 @@ So it looks like below:
 
 > Create a file as custum_style.scss inside app\assets\stylesheets\ and paste this to modify class  
 @import 'bootstrap/dist/css/bootstrap';
+
+# Add Style using Devise
+## Refer `devise bootstrap views`
+
+1. Add `gem 'devise-bootstrap-views', '~> 1.0' ` inside Gemfile and bundle install
+2. For Generate views `rails generate devise:views:bootstrap_templates`
