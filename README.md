@@ -19,14 +19,14 @@
 > `yarn add bootstrap@4.4.1 jquery@3.4.1 popper.js`  
 ## Make the config/webpack/environment.js file as follows:
 
-> const { environment } = require('@rails/webpacker')
-> const webpack = require("webpack")
+> const { environment } = require('@rails/webpacker')  
+> const webpack = require("webpack")  
 > 
-> environment.plugins.append("Provide", new webpack.ProvidePlugin({
->     $: 'jquery',
->    jQuery: 'jquery',
->     Popper: ['popper.js', 'default']
-> }))
+> environment.plugins.append("Provide", new webpack.ProvidePlugin({  
+>     $: 'jquery',  
+>    jQuery: 'jquery',  
+>     Popper: ['popper.js', 'default']  
+> }))  
 > 
 > module.exports = environment
 
@@ -40,7 +40,7 @@ So it looks like below:
 > *= require_tree .
 > *= require_self
 
-> Create a file as custum_style.scss inside app\assets\stylesheets\ and paste this to modify class  
+## Create a file as custum_style.scss inside app\assets\stylesheets\ and paste this to modify class  
 @import 'bootstrap/dist/css/bootstrap';
 
 # Add Style using Devise
