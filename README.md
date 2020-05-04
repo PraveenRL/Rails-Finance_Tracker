@@ -71,13 +71,15 @@ client = IEX::Api::Client.new(
 > `google = Stock.find(1)`
 
 ## Create a method as below in stock.rb (model)  
-> class Stock < ApplicationRecord  
->     def self.new_lookup(ticker_symbol)  
->         client = IEX::Api::Client.new(publishable_token: 'token_from_iex-cloud',  
->                                       endpoint: 'https://sandbox.iexapis.com/v1')  
->         client.price(ticker_symbol)  
->     end  
-> end
+```
+class Stock < ApplicationRecord  
+    def self.new_lookup(ticker_symbol)  
+        client = IEX::Api::Client.new(publishable_token: 'token_from_iex-cloud',  
+                                      endpoint: 'https://sandbox.iexapis.com/v1')  
+        client.price(ticker_symbol)  
+    end  
+end
+```
 
 and try in rails console as below  
 `Stock.new_lookup('GOOG')`
@@ -97,3 +99,14 @@ Remove the aws and paste the follwing
 > sandbox_api_key: "iex_original_key"
 
 *Replace __Rails.application.credentials.iex_client[:sandbox_api_key]__ in stock.rb at publishable_token*
+
+#Setup front-end structure for stock lookup
+
+1. *Create a route as __get 'my_portfolio', to: 'users#my_portfolio'*
+2. Install **gem "font-awesome-rails"**
+
+```
+<%= text_field_tag :__stock__, params[:stock] %>
+  text_field_tag will pass through params as 
+  http://localhost:3000/my_portfolio?__stock__=#
+```

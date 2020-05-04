@@ -28,6 +28,9 @@ gem 'devise-bootstrap-views', '~> 1.0'
 #Get Stock Information
 gem 'iex-ruby-client'
 
+#Font Awesome
+gem "font-awesome-rails"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
