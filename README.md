@@ -111,3 +111,11 @@ Remove the aws and paste the follwing
   http://localhost:3000/my_portfolio?stock=#
 ```
 
+# Users and Stocks (Many-To-Many)
+1. User model and Stock model, we will work with primary keys for both and use them as foreign keys
+2. **user_stocks_controller.rb** controller file
+3. **user_stock.rb** model file
+4. **user_stocks** table
+
+### Create a resource for Many-To-Many relationship
+> rails generate resource UserStock user:references stock:references
