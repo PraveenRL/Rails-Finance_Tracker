@@ -98,7 +98,7 @@ Remove the aws and paste the follwing
 > iex_client:  
 > sandbox_api_key: "iex_original_key"
 
-*Replace __Rails.application.credentials.iex_client[:sandbox_api_key]__ in stock.rb at publishable_token*
+**Replace __Rails.application.credentials.iex_client[:sandbox_api_key]__ in stock.rb at publishable_token**
 
 #Setup front-end structure for stock lookup
 
@@ -106,7 +106,8 @@ Remove the aws and paste the follwing
 2. Install **gem "font-awesome-rails"**
 
 ```
-<%= text_field_tag :__stock__, params[:stock] %>
+<%= text_field_tag :stock, params[:stock] %>
   text_field_tag will pass through params as 
-  http://localhost:3000/my_portfolio?__stock__=#
+  http://localhost:3000/my_portfolio?stock=#
 ```
+
