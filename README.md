@@ -50,9 +50,11 @@ So it looks like below:
 2. For Generate views `rails generate devise:views:bootstrap_templates`
 
 # Get API (Stock)
-1. Create free acount in IEX cloud
-1. Turn on **SANDBOX TESTING**
-3. Go to API Tokens and copy PUBLISHABLE
+1. `gem 'iex-ruby-client'`  
+2. Create free acount in IEX cloud
+3. Turn on **SANDBOX TESTING**
+4. Go to API Tokens and copy PUBLISHABLE
+__Refer : git iex ruby client__
 
 ```
 client = IEX::Api::Client.new(
@@ -60,3 +62,38 @@ client = IEX::Api::Client.new(
   endpoint: 'https://sandbox.iexapis.com/v1'
 )
 ```
+
+### Generate a model  
+`rails generate model Stock ticker:string name:string last_price:decimal`
+**Rails console**
+> `my_stock = Stock.new(name: "Alphabet", ticker: "GOOG", last_price: 1300)`
+> `my_stock.save`
+> `google = Stock.find(1)`
+
+## Create a method as below in stock.rb (model)  
+> class Stock < ApplicationRecord
+>     def self.new_lookup(ticker_symbol)
+>         client = IEX::Api::Client.new(publishable_token: 'token_from_iex-cloud',
+>                                       endpoint: 'https://sandbox.iexapis.com/v1')
+>         client.price(ticker_symbol)
+>     end
+> end
+
+and try in rails console as below  
+`Stock.new_lookup('GOOG')`
+
+## Secure Credentials
+Open config\credentials.yml.enc
+`SET EDITOR=code --wait`  
+`rails credentials:edit`
+
+### To access the key 
+Open rails console =>
+`Rails.application.credentials.aws[:access_key_id]`
+
+### Change and Save credentials  
+Remove the aws and paste the follwing  
+> iex_client:  
+>   sandbox_api_key: "iex_original_key"
+
+*Replace __Rails.application.credentials.iex_client[:sandbox_api_key]__ in stock.rb at publishable_token*
