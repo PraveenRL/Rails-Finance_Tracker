@@ -135,3 +135,14 @@ user = User.first
 user_2 = User.last
 user.friends << user_2
 ```
+
+## Search in rails console
+
+user = User.first  
+user = User.last  
+user = User.find(1)  __find id__  
+user = User.where(email: "search@mail.com")     __same__  
+user = User.where("email like ?", "search@mail.com")  __same__  
+
+user = User.where("email like ?", "%@mail.com") __search includes__
+user = User.where("email like ?", "%@mail%") __search includes__
