@@ -119,3 +119,19 @@ Remove the aws and paste the follwing
 
 ### Create a resource for Many-To-Many relationship
 > rails generate resource UserStock user:references stock:references
+
+# Friendship mode
+1. `rails g model Friendship user:references`
+2. Add **t.references :friend, references: :users, foreign_key: { to_table: :users }** inside create_friendship   migration file
+3. Add **belongs_to :friend, class_name: 'User'** in friendship.rb file
+4. Add  
+  **has_many :friendships**  
+  **has_many :friends, through: :friendships**  
+  to user.rb
+
+```
+rails console >
+user = User.first
+user_2 = User.last
+user.friends << user_2
+```
